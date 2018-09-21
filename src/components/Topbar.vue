@@ -10,12 +10,16 @@
   </div>
 </template>
 
-<style>
+<style lang="scss">
   #topBar {
-    border: 1px solid green;
-    min-height: 100px;
     display: flex;
     justify-content: space-between;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 0 3px hsla(0, 0, 0, .5);
+    > div {
+      margin: 16px;
+    }
   }
 </style>
 

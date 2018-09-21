@@ -33,12 +33,21 @@ html, body, #app{
   display: flex;
   flex-direction: column;
 }
+.icon {
+      width: 1em; height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
+  }
 main {
   display: flex;
   flex: 1;
-
+  background-color: #DDD;
+  > div {
+    margin: 16px;
+  }
   > .editor {
-    width: 20em;
+    width: 30em;
   }
 
   > .preview {
