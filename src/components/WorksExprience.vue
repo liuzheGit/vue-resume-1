@@ -2,7 +2,7 @@
   <div>
     <h2>工作经历</h2>
     <hr>
-    <el-form :label-position="'top'" label-width="80px">   
+    <el-form label-position="top" label-width="80px">   
       <div class="container"
             v-for="(work, index) in worksExprience"
             v-bind:key="index">

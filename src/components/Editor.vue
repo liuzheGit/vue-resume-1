@@ -13,11 +13,14 @@
     </div>
     <div class="editor-content">
       <ol>
-        <li v-bind:class="{active: currentTab===0}">
-          <PersonalInfo v-bind:personalInfo="personalInfo"/>
+        <li v-bind:class="{ active: currentTab === 0}">
+          <PersonalInfo v-bind:personalInfo="personalInfo" />
         </li>
-        <li v-bind:class="{active: currentTab===1}">
+        <li v-bind:class="{ active: currentTab === 1}">
           <WorksExprience v-bind:worksExprience="worksExprience" />
+        </li>
+        <li v-bind:class="{ active: currentTab === 2}">
+          <SchoolEditor v-bind:items="schoolItems" />
         </li>
       </ol>
     </div>
@@ -27,9 +30,10 @@
 <script>
 import PersonalInfo from './PersonalEditor'
 import WorksExprience from './WorksExprience'
+import SchoolEditor from './SchoolEditor'
 export default {
   components:{
-    PersonalInfo, WorksExprience
+    PersonalInfo, WorksExprience, SchoolEditor
   },
   data(){
     return {
@@ -42,11 +46,14 @@ export default {
       },
       worksExprience: [
         {name: '', content: ''},
+      ],
+      schoolItems:[
+        {name: '', durtion: '', degree: ''},
       ]
     }
   },
   methods:{
-    
+
   }
 }
 </script>
