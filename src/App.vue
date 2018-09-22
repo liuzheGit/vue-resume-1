@@ -45,6 +45,10 @@ main {
   background-color: #DDD;
   > div {
     margin: 16px;
+    box-shadow: 0 0 5px hsla(0, 0, 0, .3);
+    background: #fff;
+    border-radius: 4px;
+    overflow: hidden;
   }
   > .editor {
     width: 30em;
