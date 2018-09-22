@@ -14,13 +14,22 @@
     <div class="editor-content">
       <ol>
         <li v-bind:class="{ active: currentTab === 0}">
-          <ObjectEditor title="个人信息" v-bind:object="personalInfo" v-bind:labels="{name: '姓名', city: '城市', birth: '出生年月'}"/>
+          <ObjectEditor v-bind:object="personalInfo" v-bind:labels="{name: '姓名', city: '城市', birth: '出生年月'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 1}">
           <ArrayEditor title="工作经历" v-bind:items="workItems" v-bind:labels="{name: '公司名称', content: '工作内容'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 2}">
           <ArrayEditor title="学习经历" v-bind:items="schoolItems" v-bind:labels="{name: '学校', durtion: '时间', degree: '学位'}"/>
+        </li>
+        <li v-bind:class="{ active: currentTab === 3 }">
+          <ArrayEditor title="项目经验" v-bind:items="projectItems" v-bind:labels="{ name: '项目名称', description: '项目描述'}"/>
+        </li>
+        <li v-bind:class="{ active: currentTab === 4 }">
+          <ArrayEditor title="获奖情况" v-bind:items="awardItems" v-bind:labels="{ name: '奖项', description: '描述'}"/>
+        </li>
+        <li v-bind:class="{ active: currentTab === 5 }">
+          <ContactEditor v-bind:contacts="contects"/>
         </li>
       </ol>
     </div>
@@ -30,9 +39,10 @@
 <script>
 import ObjectEditor from './ObjectEditor'
 import ArrayEditor from './ArrayEditor'
+import ContactEditor from './ContactEditor'
 export default {
   components:{
-    ObjectEditor, ArrayEditor
+    ObjectEditor, ArrayEditor, ContactEditor
   },
   data(){
     return {
@@ -48,7 +58,16 @@ export default {
       ],
       schoolItems:[
         {name: '', durtion: '', degree: ''},
-      ]
+      ],
+      projectItems: [
+        {name: '', description: ''},
+      ],
+      awardItems: [
+         {name: '', description: ''},
+      ],
+      contects: {
+        qq: '',wechat: '', phone: '', email: ''
+      }
     }
   },
   methods:{

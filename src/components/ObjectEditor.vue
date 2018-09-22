@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>{{title}}</h2>
+    <h2>个人信息</h2>
     <hr>
     <el-form :label-position="'top'" label-width="80px">
       <el-form-item label="姓名">
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  props: ['object', 'title'],
+  props: ['object'],
   methods:{
   
   }
