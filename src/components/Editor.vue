@@ -14,36 +14,10 @@
     <div class="editor-content">
       <ol>
         <li v-bind:class="{active: currentTab===0}">
-          <h2>个人信息</h2>
-          <hr>
-          <el-form :label-position="'top'" label-width="80px">
-            <el-form-item label="姓名">
-              <el-input v-model="personalInfo.name"></el-input>
-            </el-form-item>
-            <el-form-item label="城市">
-              <el-input v-model="personalInfo.city"></el-input>
-            </el-form-item>
-            <el-form-item label="出生年月">
-              <el-input v-model="personalInfo.birth"></el-input>
-            </el-form-item>
-          </el-form>
+          <PersonalInfo v-bind:personalInfo="personalInfo"/>
         </li>
         <li v-bind:class="{active: currentTab===1}">
-          <h2>工作经历</h2>
-          <hr>
-          <el-form :label-position="'top'" 
-                   label-width="80px"
-                  v-for="(work, index) in worksExprience"
-                  v-bind:key="index">
-            <el-button class="remove-button" size="small" type="danger" v-on:click="removeWork(index)">删除</el-button>
-            <el-form-item label="公司名称">
-              <el-input v-model="work.name"></el-input>
-            </el-form-item>
-            <el-form-item label="工作内容">
-              <el-input v-model="work.content"></el-input>
-            </el-form-item>
-          </el-form>
-          <el-button type="primary" v-on:click="addWorks">添加</el-button>
+          <WorksExprience v-bind:worksExprience="worksExprience" />
         </li>
       </ol>
     </div>
@@ -51,7 +25,12 @@
 </template>
 
 <script>
+import PersonalInfo from './PersonalEditor'
+import WorksExprience from './WorksExprience'
 export default {
+  components:{
+    PersonalInfo, WorksExprience
+  },
   data(){
     return {
       currentTab: 0,
@@ -67,12 +46,7 @@ export default {
     }
   },
   methods:{
-    addWorks(){
-      this.worksExprience.push({name: '', content: ''})
-    },
-    removeWork(index){
-      this.worksExprience.splice(index, 1);
-    }
+    
   }
 }
 </script>
@@ -108,12 +82,12 @@ export default {
         &.active{
           display: block;
         }
-        form{
+        .container{
           position: relative;
         }
         .remove-button{
           position: absolute;
-          right: 50px;
+          right: 4px;
         }
       }
     }
