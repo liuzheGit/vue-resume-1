@@ -1,8 +1,21 @@
 <template>
   <div id="preview">
-    我是Preview
+    <h1>{{resumer.personalInfo.name}}</h1>
+    <p>{{resumer.personalInfo.city}} | {{resumer.personalInfo.birth}}</p>
+    <ul>
+      <li v-for="(item, index) in resumer.workItems" :key="index">
+        <p>{{item.name}}</p>
+        <p>{{item.content}}</p>
+      </li>
+    </ul>
   </div>
 </template>
+<script>
+export default {
+  props:['resumer']
+}
+</script>
+
 
 <style>
   #preview {

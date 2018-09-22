@@ -14,22 +14,22 @@
     <div class="editor-content">
       <ol>
         <li v-bind:class="{ active: currentTab === 0}">
-          <ObjectEditor v-bind:object="personalInfo" v-bind:labels="{name: '姓名', city: '城市', birth: '出生年月'}"/>
+          <ObjectEditor v-bind:object="resumer.personalInfo" v-bind:labels="{name: '姓名', city: '城市', birth: '出生年月'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 1}">
-          <ArrayEditor title="工作经历" v-bind:items="workItems" v-bind:labels="{name: '公司名称', content: '工作内容'}"/>
+          <ArrayEditor title="工作经历" v-bind:items="resumer.workItems" v-bind:labels="{name: '公司名称', content: '工作内容'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 2}">
-          <ArrayEditor title="学习经历" v-bind:items="schoolItems" v-bind:labels="{name: '学校', durtion: '时间', degree: '学位'}"/>
+          <ArrayEditor title="学习经历" v-bind:items="resumer.schoolItems" v-bind:labels="{name: '学校', durtion: '时间', degree: '学位'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 3 }">
-          <ArrayEditor title="项目经验" v-bind:items="projectItems" v-bind:labels="{ name: '项目名称', description: '项目描述'}"/>
+          <ArrayEditor title="项目经验" v-bind:items="resumer.projectItems" v-bind:labels="{ name: '项目名称', description: '项目描述'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 4 }">
-          <ArrayEditor title="获奖情况" v-bind:items="awardItems" v-bind:labels="{ name: '奖项', description: '描述'}"/>
+          <ArrayEditor title="获奖情况" v-bind:items="resumer.awardItems" v-bind:labels="{ name: '奖项', description: '描述'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 5 }">
-          <ContactEditor v-bind:contacts="contects"/>
+          <ContactEditor v-bind:contacts="resumer.contects"/>
         </li>
       </ol>
     </div>
@@ -44,30 +44,12 @@ export default {
   components:{
     ObjectEditor, ArrayEditor, ContactEditor
   },
+  props: ['resumer'],
   data(){
     return {
       currentTab: 0,
       icons: ['shenfenzhenghao', 'workfillmtui', 'book', 'code', 'icon22', 'phone'],
-      personalInfo:{
-        name: '',
-        city: '',
-        birth: ''
-      },
-      workItems: [
-        {name: '', content: ''},
-      ],
-      schoolItems:[
-        {name: '', durtion: '', degree: ''},
-      ],
-      projectItems: [
-        {name: '', description: ''},
-      ],
-      awardItems: [
-         {name: '', description: ''},
-      ],
-      contects: {
-        qq: '',wechat: '', phone: '', email: ''
-      }
+      
     }
   },
   methods:{
@@ -80,8 +62,6 @@ export default {
   #editor {
     min-height: 100px;
     display: flex;
-    > div {
-    }
     .menu{
       li {
         padding: 16px;
