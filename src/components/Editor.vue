@@ -2,46 +2,21 @@
   <div id="editor">
     <div class="menu">
       <ol>
-        <li v-bind:class="{active: currentTab === 0}" v-on:click="currentTab=0">
+        <li v-for="(i, index) in icons" v-bind:key="index"
+            v-bind:class="{active: currentTab === index}"
+            v-on:click="currentTab = index" >
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-shenfenzhenghao"></use>
-          </svg>
-        </li>
-        <li v-bind:class="{active: currentTab === 1}" v-on:click="currentTab=1">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-workfillmtui"></use>
-          </svg>
-        </li>
-        <li v-bind:class="{active: currentTab === 2}" v-on:click="currentTab=2">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-book"></use>
-          </svg>
-        </li>
-        <li v-bind:class="{active: currentTab === 3}" v-on:click="currentTab=3">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-code"></use>
-          </svg>
-        </li>
-        <li v-bind:class="{active: currentTab === 4}" v-on:click="currentTab=4">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-icon22"></use>
-          </svg>
-        </li>
-        <li v-bind:class="{active: currentTab === 5}" v-on:click="currentTab=5">
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-phone"></use>
+            <use v-bind:xlink:href="'#icon-'+ i +''"></use>1
           </svg>
         </li>
       </ol>
     </div>
     <div class="editor-content">
       <ol>
-        <li v-bind:class="{active: currentTab === 0}">tab1</li>
-        <li v-bind:class="{active: currentTab === 1}">tab2</li>
-        <li v-bind:class="{active: currentTab === 2}">tab3</li>
-        <li v-bind:class="{active: currentTab === 3}">tab4</li>
-        <li v-bind:class="{active: currentTab === 4}">tab5</li>
-        <li v-bind:class="{active: currentTab === 5}">tab6</li>
+        <li v-for="i in [0, 1, 2, 3, 4, 5]" v-bind:key="i"
+            v-bind:class="{active: currentTab === i}">
+            tab{{i}}
+        </li>
       </ol>
     </div>
   </div>
@@ -51,7 +26,8 @@
 export default {
   data(){
     return {
-      currentTab: 0
+      currentTab: 0,
+      icons: ['shenfenzhenghao', 'workfillmtui', 'book', 'code', 'icon22', 'phone']
     }
   }
 }
