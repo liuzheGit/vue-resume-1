@@ -6,7 +6,7 @@
             v-bind:class="{active: currentTab === index}"
             v-on:click="currentTab = index" >
           <svg class="icon" aria-hidden="true">
-            <use v-bind:xlink:href="'#icon-'+ i +''"></use>1
+            <use v-bind:xlink:href="`#icon-${i}`"></use>1
           </svg>
         </li>
       </ol>
@@ -14,13 +14,13 @@
     <div class="editor-content">
       <ol>
         <li v-bind:class="{ active: currentTab === 0}">
-          <PersonalInfo v-bind:personalInfo="personalInfo" />
+          <ObjectEditor v-bind:title="'个人信息'" v-bind:object="personalInfo" v-bind:labels="{name: '姓名', city: '城市', birth: '出生年月'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 1}">
-          <WorksExprience v-bind:worksExprience="worksExprience" />
+          <ArrayEditor v-bind:title="'工作经历'" v-bind:items="workItems" v-bind:labels="{name: '公司名称', content: '工作内容'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 2}">
-          <SchoolEditor v-bind:items="schoolItems" />
+          <ArrayEditor v-bind:title="'学习经历'" v-bind:items="schoolItems" v-bind:labels="{name: '学校', durtion: '时间', degree: '学位'}"/>
         </li>
       </ol>
     </div>
@@ -28,12 +28,11 @@
 </template>
 
 <script>
-import PersonalInfo from './PersonalEditor'
-import WorksExprience from './WorksExprience'
-import SchoolEditor from './SchoolEditor'
+import ObjectEditor from './ObjectEditor'
+import ArrayEditor from './ArrayEditor'
 export default {
   components:{
-    PersonalInfo, WorksExprience, SchoolEditor
+    ObjectEditor, ArrayEditor
   },
   data(){
     return {
@@ -44,7 +43,7 @@ export default {
         city: '',
         birth: ''
       },
-      worksExprience: [
+      workItems: [
         {name: '', content: ''},
       ],
       schoolItems:[

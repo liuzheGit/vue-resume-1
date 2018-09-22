@@ -1,16 +1,16 @@
 <template>
   <div>
-    <h2>个人信息</h2>
+    <h2>{{title}}</h2>
     <hr>
     <el-form :label-position="'top'" label-width="80px">
       <el-form-item label="姓名">
-        <el-input v-model="personalInfo.name"></el-input>
+        <el-input v-model="object.name"></el-input>
       </el-form-item>
       <el-form-item label="城市">
-        <el-input v-model="personalInfo.city"></el-input>
+        <el-input v-model="object.city"></el-input>
       </el-form-item>
       <el-form-item label="出生年月">
-        <el-input v-model="personalInfo.birth"></el-input>
+        <el-input v-model="object.birth"></el-input>
       </el-form-item>
     </el-form>
   </div>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  props: ['personalInfo'],
+  props: ['object', 'title'],
   methods:{
   
   }

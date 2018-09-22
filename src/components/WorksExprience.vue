@@ -12,7 +12,7 @@
         </el-form-item>
         <el-form-item label="工作内容">
           <el-input v-model="work.content"></el-input>
-        </el-form-item>
+        </el-form-item> 
       </div>
       
     </el-form>
