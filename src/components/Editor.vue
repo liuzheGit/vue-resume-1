@@ -4,12 +4,12 @@
       <ol>
         <li class="active">
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-credentials_icon"></use>
+            <use xlink:href="#icon-shenfenzhenghao"></use>
           </svg>
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-workyear"></use>
+            <use xlink:href="#icon-workfillmtui"></use>
           </svg>
         </li>
         <li>
@@ -19,22 +19,17 @@
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-project"></use>
+            <use xlink:href="#icon-code"></use>
           </svg>
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-jiangbei-"></use>
+            <use xlink:href="#icon-icon22"></use>
           </svg>
         </li>
         <li>
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-phone"></use>
-          </svg>
-        </li>
-        <li>
-          <svg class="icon" aria-hidden="true">
-            <use xlink:href="#icon-xingxing1"></use>
           </svg>
         </li>
       </ol>
