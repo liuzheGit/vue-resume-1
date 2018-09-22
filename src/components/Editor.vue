@@ -14,13 +14,13 @@
     <div class="editor-content">
       <ol>
         <li v-bind:class="{ active: currentTab === 0}">
-          <ObjectEditor v-bind:title="'个人信息'" v-bind:object="personalInfo" v-bind:labels="{name: '姓名', city: '城市', birth: '出生年月'}"/>
+          <ObjectEditor title="个人信息" v-bind:object="personalInfo" v-bind:labels="{name: '姓名', city: '城市', birth: '出生年月'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 1}">
-          <ArrayEditor v-bind:title="'工作经历'" v-bind:items="workItems" v-bind:labels="{name: '公司名称', content: '工作内容'}"/>
+          <ArrayEditor title="工作经历" v-bind:items="workItems" v-bind:labels="{name: '公司名称', content: '工作内容'}"/>
         </li>
         <li v-bind:class="{ active: currentTab === 2}">
-          <ArrayEditor v-bind:title="'学习经历'" v-bind:items="schoolItems" v-bind:labels="{name: '学校', durtion: '时间', degree: '学位'}"/>
+          <ArrayEditor title="学习经历" v-bind:items="schoolItems" v-bind:labels="{name: '学校', durtion: '时间', degree: '学位'}"/>
         </li>
       </ol>
     </div>
